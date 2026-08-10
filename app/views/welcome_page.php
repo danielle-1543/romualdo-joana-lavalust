@@ -579,7 +579,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
     <p class="hero-sub">
         A lightweight, expressive PHP MVC framework built for developers who want structure without the bloat. 
     </p>
-    <p>WELCOME TO LAVALUST, DANA!</p>
+
 
     <div class="hero-actions">
         <a href="https://lavalust.netlify.app/docs/" target="_blank" class="btn btn-primary">
