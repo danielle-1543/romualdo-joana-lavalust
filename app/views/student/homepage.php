@@ -1,109 +1,323 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Student Home</title> 
- 
-    <style> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Home</title>
+
+    <style>
         * {
             box-sizing: border-box;
         }
 
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #fdf6f8; 
-            margin: 0; 
-            padding: 0; 
-            color: #333;
-        } 
- 
-        .container { 
-            width: 80%; 
-            max-width: 700px; 
-            margin: 100px auto; 
-            background: #ffffff; 
-            padding: 50px 40px; 
-            text-align: center; 
-            border-radius: 16px; 
-            box-shadow: 0 8px 25px rgba(170, 100, 120, 0.12);
-            border-top: 5px solid #d98fa5;
-        } 
- 
-        h1 { 
-            color: #3d3437;
-            margin-bottom: 12px;
-        } 
- 
-        p { 
-            color: #777; 
-            font-size: 16px;
-            margin-bottom: 30px;
-        } 
-
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
- 
-        .button,
-        .nav a { 
-            display: inline-block; 
-            padding: 11px 22px; 
-            background: #c97891; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px;
-            font-size: 14px;
-            transition: 0.2s ease;
-        } 
- 
-        .nav a:hover { 
-            background: #ad5f78;
-            transform: translateY(-2px);
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff0f5;
+            color: #3a2630;
         }
 
-        .nav a.profile {
-            background: #f1d6df;
-            color: #8f4d62;
-        }
-
-        .nav a.profile:hover {
-            background: #e8c1ce;
-        }
-
-        .welcome-icon {
-            width: 55px;
-            height: 55px;
-            margin: 0 auto 20px;
-            background: #f1d6df;
-            color: #a65c74;
-            border-radius: 50%;
+        .page {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            padding: 30px;
         }
-    </style> 
-</head> 
- 
-<body> 
- 
-<div class="container"> 
 
-    <div class="welcome-icon">♡</div>
- 
-    <h1>Welcome to the Student Home Page</h1> 
- 
-    <p>This is the student homepage.</p> 
- 
-    <div class="nav">
-        <a href="<?= site_url('student/profile'); ?>" class="profile">Student Profile</a>
+        .welcome-card {
+            width: 100%;
+            max-width: 850px;
+            min-height: 500px;
+
+            background: #ffffff;
+            border-radius: 28px;
+
+            box-shadow: 0 15px 45px rgba(126, 45, 78, 0.15);
+
+            border: 1px solid #f1ccd9;
+
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* TOP PINK AREA */
+
+        .pink-header {
+            height: 150px;
+            background: #c94f7c;
+
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-one {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border-radius: 50%;
+
+            left: 8%;
+            top: -45px;
+        }
+
+        .circle-two {
+            position: absolute;
+            width: 170px;
+            height: 170px;
+
+            background: rgba(255, 255, 255, 0.07);
+
+            border-radius: 50%;
+
+            right: 5%;
+            top: 55px;
+        }
+
+        .heart {
+            width: 75px;
+            height: 75px;
+
+            background: white;
+            color: #c94f7c;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 32px;
+
+            box-shadow: 0 8px 20px rgba(80, 20, 45, 0.15);
+
+            z-index: 2;
+        }
+
+        /* CONTENT */
+
+        .content {
+            flex: 1;
+
+            padding: 50px 40px;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content h1 {
+            margin: 0;
+
+            color: #762646;
+
+            font-size: 34px;
+            font-weight: 700;
+        }
+
+        .content h1 span {
+            color: #c94f7c;
+        }
+
+        .content p {
+            max-width: 570px;
+
+            margin: 18px auto 30px;
+
+            color: #735d66;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+        /* BUTTON */
+
+        .profile-button {
+            display: inline-block;
+
+            padding: 13px 30px;
+
+            background: #8f2854;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            box-shadow: 0 6px 15px rgba(100, 30, 60, 0.18);
+
+            transition: 0.2s ease;
+        }
+
+        .profile-button:hover {
+            background: #701d41;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 8px 18px rgba(100, 30, 60, 0.25);
+        }
+
+        /* SMALL DECORATIONS */
+
+        .decorations {
+            display: flex;
+            gap: 10px;
+
+            margin-top: 35px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+
+            background: #e8a5bb;
+
+            border-radius: 50%;
+        }
+
+        .dot:nth-child(2) {
+            background: #c94f7c;
+        }
+
+        .dot:nth-child(3) {
+            background: #f2c8d6;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 17px;
+
+            text-align: center;
+
+            border-top: 1px solid #f0dce3;
+
+            color: #987984;
+
+            font-size: 12px;
+
+            background: #fffafd;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 18px;
+            }
+
+            .welcome-card {
+                min-height: 470px;
+                border-radius: 22px;
+            }
+
+            .pink-header {
+                height: 125px;
+            }
+
+            .heart {
+                width: 65px;
+                height: 65px;
+                font-size: 27px;
+            }
+
+            .content {
+                padding: 40px 25px;
+            }
+
+            .content h1 {
+                font-size: 27px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="welcome-card">
+
+        <!-- PINK HEADER -->
+
+        <div class="pink-header">
+
+            <div class="circle-one"></div>
+            <div class="circle-two"></div>
+
+            <div class="heart">
+                ♡
+            </div>
+
+        </div>
+
+
+        <!-- WELCOME CONTENT -->
+
+        <div class="content">
+
+            <h1>
+                Welcome to the <span>Student Portal</span>
+            </h1>
+
+            <p>
+                Your space to view student information,
+                academic details, and personal profile.
+            </p>
+
+            <a
+                href="<?= site_url('student/profile'); ?>"
+                class="profile-button"
+            >
+                View Student Profile →
+            </a>
+
+
+            <!-- DECORATIVE DOTS -->
+
+            <div class="decorations">
+
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+            Student Portal
+        </div>
+
     </div>
-     
-</div> 
- 
-</body> 
+
+</div>
+
+</body>
 </html>
